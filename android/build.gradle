@@ -1,10 +1,10 @@
 apply plugin: 'com.android.library'
 
-def DEFAULT_COMPILE_SDK_VERSION             = 28
-def DEFAULT_BUILD_TOOLS_VERSION             = "28.0.0"
-def DEFAULT_TARGET_SDK_VERSION              = 28
-def DEFAULT_GOOGLE_PLAY_SERVICES_VERSION    = "+"
-def DEFAULT_SUPPORT_LIB_VERSION             = "28.0.0"
+def DEFAULT_COMPILE_SDK_VERSION             = 27
+def DEFAULT_BUILD_TOOLS_VERSION             = "27.0.2"
+def DEFAULT_TARGET_SDK_VERSION              = 27
+def DEFAULT_GOOGLE_PLAY_SERVICES_VERSION    = "11.6.0"
+def DEFAULT_SUPPORT_LIB_VERSION             = "27.0.2"
 
 android {
     compileSdkVersion project.hasProperty('compileSdkVersion') ? project.compileSdkVersion : DEFAULT_COMPILE_SDK_VERSION
@@ -28,9 +28,9 @@ dependencies {
     def googlePlayServicesVersion = project.hasProperty('googlePlayServicesVersion') ? project.googlePlayServicesVersion : DEFAULT_GOOGLE_PLAY_SERVICES_VERSION
     def supportLibVersion = project.hasProperty('supportLibVersion') ? project.supportLibVersion : DEFAULT_SUPPORT_LIB_VERSION
 
-    implementation 'com.facebook.react:react-native:+'
-    implementation "com.google.android.gms:play-services-gcm:$googlePlayServicesVersion"
-    implementation "com.android.support:appcompat-v7:$supportLibVersion"
-    implementation "com.android.support:support-v4:$supportLibVersion"
-    implementation "com.android.support:support-media-compat:$supportLibVersion"
+    compile 'com.facebook.react:react-native:+'
+    compile "com.google.android.gms:play-services-gcm:$googlePlayServicesVersion"
+    compile "com.android.support:appcompat-v7:$supportLibVersion"
+    compile "com.android.support:support-v4:$supportLibVersion"
+    compile "com.android.support:support-media-compat:$supportLibVersion"
 }
